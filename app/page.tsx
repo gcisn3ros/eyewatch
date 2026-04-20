@@ -119,16 +119,6 @@ export default function Home() {
               {/* Right — image grid */}
               <div className="hidden lg:grid grid-cols-2 gap-3 animate-fade-up-delay-2">
                 <div className="flex flex-col gap-3">
-                  <div className="aspect-[9/16] relative overflow-hidden" style={{ borderRadius: '4px', background: '#0f0f0f' }}>
-                  <video
-                    src="/videos/IMG_8206.mov"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  </div>
                   {/*<ImgPlaceholder label="Network Setup" aspect="aspect-square" /> */}
                 </div>
                 <div className="flex flex-col gap-3 mt-8">
@@ -186,12 +176,16 @@ export default function Home() {
             <h2 className="font-syne text-off-white mb-16" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', fontFamily: 'Syne' }}>Recent Installs</h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <div className="aspect-[4/3] relative overflow-hidden" style={{ borderRadius: '4px' }}>
-                <img src="/images/jobs/IMG_8264.jpeg" alt="Floodlight camera install"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'top' }}
-                />
-              </div>
+            <div className="aspect-[4/3] relative overflow-hidden" style={{ borderRadius: '4px', background: '#0f0f0f' }}>
+              <video
+                src="/videos/IMG_8206.mov"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
               {/*<ImgPlaceholder label="4-Cam Home System" aspect="aspect-[4/3]" />
               <ImgPlaceholder label="Network Rack" aspect="aspect-[4/3]" />
               <ImgPlaceholder label="Eufy E340 Install" aspect="aspect-[4/3]" />
