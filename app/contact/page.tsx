@@ -24,12 +24,31 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Replace this with your actual form submission logic (e.g. Resend, EmailJS, Formspree)
-    await new Promise(r => setTimeout(r, 1200));
-    setSubmitted(true);
+  
+    try {
+      const res = await fetch('https://formspree.io/f/mlgalwyr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+        }),
+      });
+  
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please email us directly at gio@eye.watch');
+      }
+    } catch {
+      alert('Connection error. Please email us directly at gio@eye.watch');
+    }
+  
     setLoading(false);
   };
-
   return (
     <>
       <Navbar />
