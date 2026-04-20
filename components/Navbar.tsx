@@ -2,13 +2,14 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
-    { href: '/gallery', label: 'Gallery' },
+    //{ href: '/gallery', label: 'Gallery' },
     { href: '/contact', label: 'Contact' },
   ];
 

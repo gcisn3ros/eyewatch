@@ -85,7 +85,7 @@ export default function ContactPage() {
                       </svg>
                     ),
                     label: 'Email',
-                    value: 'info@eye.watch',
+                    value: 'gio@eye.watch',
                   },
                   {
                     icon: (
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       </svg>
                     ),
                     label: 'Phone',
-                    value: 'Available upon booking',
+                    value: '847-429-0201',
                   },
                   {
                     icon: (
@@ -123,13 +123,7 @@ export default function ContactPage() {
                   <span style={{ fontSize: '0.8rem', color: '#cc1414', fontFamily: 'Syne', fontWeight: 600 }}>Se Habla Español — Bilingual Service Available</span>
                 </div>
 
-                {/* Image placeholder */}
-                <div className="img-placeholder aspect-[4/3] flex flex-col items-center justify-center gap-3" style={{ borderRadius: '4px' }}>
-                  <svg className="w-8 h-8 opacity-20" fill="none" stroke="#f2f0ec" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span style={{ fontSize: '0.65rem', letterSpacing: '0.14em', color: '#444', fontFamily: 'Syne', fontWeight: 600, textTransform: 'uppercase' }}>Team / Job Site Photo</span>
-                </div>
+                
 
               </div>
 
