@@ -13,7 +13,7 @@ const services = [
 ];
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '', _gotcha: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -35,6 +35,7 @@ export default function ContactPage() {
           phone: form.phone,
           service: form.service,
           message: form.message,
+          _gotcha: form._gotcha,
         }),
       });
   
@@ -160,7 +161,7 @@ export default function ContactPage() {
                       <p style={{ color: '#666', fontSize: '0.9rem' }}>We&#39;ll be in touch within 24 hours.</p>
                     </div>
                     <button
-                      onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', service: '', message: '' }); }}
+                      onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', service: '', message: '', _gotcha: '' }); }}
                       className="font-syne font-700 text-xs uppercase tracking-widest px-6 py-3 transition-all duration-200 hover:opacity-80"
                       style={{ border: '1px solid #2a2a2a', color: '#9a9890', borderRadius: '2px', fontFamily: 'Syne', fontWeight: 700 }}
                     >
@@ -170,6 +171,16 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <h2 className="font-syne text-off-white font-800 mb-2" style={{ fontSize: '1.3rem', fontFamily: 'Syne', fontWeight: 800 }}>Request a Free Quote</h2>
+                    <input
+                      type="text"
+                      name="_gotcha"
+                      value={form._gotcha}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="absolute -left-[9999px]"
+                    />
 
                     {/* Name + Phone row */}
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -180,6 +191,7 @@ export default function ContactPage() {
                           name="name"
                           value={form.name}
                           onChange={handleChange}
+                          maxLength={120}
                           required
                           placeholder="John Smith"
                           className="form-input w-full px-4 py-3 text-sm"
@@ -193,6 +205,7 @@ export default function ContactPage() {
                           name="phone"
                           value={form.phone}
                           onChange={handleChange}
+                          maxLength={40}
                           placeholder="(847) 555-0100"
                           className="form-input w-full px-4 py-3 text-sm"
                           style={{ borderRadius: '3px' }}
@@ -208,6 +221,7 @@ export default function ContactPage() {
                         name="email"
                         value={form.email}
                         onChange={handleChange}
+                        maxLength={254}
                         required
                         placeholder="john@example.com"
                         className="form-input w-full px-4 py-3 text-sm"
@@ -238,6 +252,7 @@ export default function ContactPage() {
                         name="message"
                         value={form.message}
                         onChange={handleChange}
+                        maxLength={3000}
                         rows={5}
                         placeholder="Describe your property, number of cameras needed, specific issues, etc..."
                         className="form-input w-full px-4 py-3 text-sm resize-none"

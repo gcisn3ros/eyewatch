@@ -36,3 +36,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # eyewatch
 # eyewatch
+
+## Docker
+
+Build and run the static site with Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Open [http://localhost:3000](http://localhost:3000). The port is bound to localhost; use a TLS-terminating reverse proxy for public deployments. Stop the container with `Ctrl+C`.
